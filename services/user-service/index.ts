@@ -1,11 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
 import connectDB from "./src/infrastructure/database/mongo";
-import { userRoutes } from "./src/api/routes/user-route.ts";
+import { userRoutes } from "./src/api/routes/user-route";
 
 const PORT = 8000;
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 connectDB();
 app.use(userRoutes);
 
